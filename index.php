@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi novia?</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        h1{
+            margin-top: 25px;
+            text-align: center;
+        }
+        div{
+           width: 100%;
+           height: 100%; 
+        }
+        
+        #no{
+            position: absolute;
+            width: 50px;
+            top: 50%;
+            left: 50%;
+        }
+        #si{
+            position: absolute;
+            width: 47px;
+            top: 50%;
+            left: 46%;
+        }
+        #SI{
+            margin-top:25%;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>¿Quieres ser mi novia?</h1>
+    <div id="respuesta">
+        <button class="btn btn-primary" onclick="si()" id ="si">SI</button>
+        <button class="btn btn-primary" onmouseover="no()" id="no">NO</button>
+    </div>
+    <p id="SI">
+
+    </p>
+    <script>
+        let min
+        let max
+        let x
+        let y
+        let cont = 0
+        function no() {
+            min = 0
+            max = screen.width - 150
+            x = Math.floor((Math.random() * (max - min + 1)) + min)
+            max = screen.height - 150
+            y = Math.floor((Math.random() * (max - min + 1)) + min)
+            document.getElementById("no").style.top = y+"px"
+            document.getElementById("no").style.left = x+"px"
+            // console.log(document.getElementById("no").style.left)
+            // console.log(document.getElementById("no").style.top)
+            cont++
+        }
+        function si() {
+            document.getElementById("respuesta").innerHTML = ""
+            if (cont != 0) {
+                document.getElementById("SI").innerHTML += `
+            <p> A pesar de haber intentado darle ${cont} veces que no, se que en el fondo querías mi niña. Mi ig @ivi1712 ;) </p>   
+            `
+            }else{
+                document.getElementById("SI").innerHTML += `
+            <p> No sabía que dirías SI a la primera. Mi ig @ivi1712 ;) </p>   
+            `
+            }
+            
+        }
+    </script>
+</body>
+</html>
