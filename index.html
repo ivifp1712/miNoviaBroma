@@ -64,7 +64,12 @@
         }
         function si() {
             document.getElementById("respuesta").innerHTML = ""
-            if (cont != 0) {
+            if (cont == 1){
+                document.getElementById("SI").innerHTML += `
+            <p> A pesar de haber intentado darle ${cont} vez que no, se que en el fondo querías ser mi niña. Mi ig @ivi1712 ;) </p>   
+            `
+            }
+            else if (cont != 0) {
                 document.getElementById("SI").innerHTML += `
             <p> A pesar de haber intentado darle ${cont} veces que no, se que en el fondo querías ser mi niña. Mi ig @ivi1712 ;) </p>   
             `
